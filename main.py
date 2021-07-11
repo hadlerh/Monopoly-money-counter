@@ -4,13 +4,10 @@ menu = True
 #variabili soldi
 soldi_totali_cigno = 1500
 soldi_totali_palla_da_rugby = 1500
-
-#affitti territorio
-affitto_vicolo_corto = 2
-
-#affitti in serie
-affittoserie_vicolocorto = 4
-affittoserie_vicolostretto = 8
+soldi_totali_gufo = 1500
+soldi_totali_orso_peluche= 1500
+soldi_totali_elefantino = 1500
+soldi_totali_cartone_di_latte = 1500
 
 #ciclo gioco
 while menu:
@@ -31,7 +28,7 @@ while menu:
         print(" ──────────────────")
         print("|Che azione scegli?|")
         print(" ──────────────────")
-        azioni = ["1-Immobili","2-Soldi","3-Affitti" ]
+        azioni = ["1-Immobili","2-Affitti", "3-Soldi", "4-Passa Dal Via" ]
         for azione in azioni:
             print(azione)
         print("────────────")
@@ -45,7 +42,7 @@ while menu:
             print(" ────────────────────")
             print("|Che immobili scegli?|")
             print(" ────────────────────")
-            lista_immobili = ["1-Vicolo corto", "2-Vicolo stretto"]
+            lista_immobili = ["1-Vicolo Corto", "2-Vicolo Stretto", "3-Bastioni Gran Sasso", "4-Viale Monterosa", "5-Viale Vesuvio", "6-Via Accademia", "7-Corso Ateneo", "8-Piazza Universitaria'", "9-Via Verdi", "10-Corso Raffaello", "11-Piazza Dante", "12-Viale Marco Polo", "13-Corso Magellano", "14-Largo Colombo", "15-Viale Costantino", "16-Viale Traiano", "17-Piazza Giulio Cesare", "18-Via Roma", "19-Corso Impero", "20-Largo Augusto", "21-Viale Dei Giardini", "22-Parco Della Vittoria", "23-Stazione Nord", "24-Stazione Ovest", "25-Stazione Sud", "26-Stazione Est", "27-Socita' Elettrica", "28-Soceta' Acqua Potabile"]
             for lista_immobile in lista_immobili:
                 print(lista_immobile)
             print("────────────")
@@ -59,7 +56,7 @@ while menu:
                 print(" ───────────────")
                 print("|Cosa vuoi fare?|")
                 print(" ───────────────")
-                azioni_vicolo_corto = ["1-Comprare"]
+                azioni_vicolo_corto = ["1-Comprare territorio", "2-Comprare casa", "3-Comprare hotel", "4-ipoteca", "5-Cancella ipoteca"]
                 for azione_vicolo_corto in azioni_vicolo_corto:
                     print(azione_vicolo_corto)
                 print("────────────")
@@ -104,18 +101,8 @@ while menu:
                     print("Ecco tutti i soldi che hai:")
                     print(soldi_totali_cigno)
                     print("────────────────────────────────────────────────")
-        
-        #totale soldi di cigno
-        if scelta_azione == "2":
-            print()
-            print(" ────────────────────")
-            print("|Ecco i soldi totali|")
-            print(" ────────────────────")
-            print(soldi_totali_cigno)
-            print("────────────────────────────────────────────────")
-
         #tipi di affitti
-        if scelta_azione == "3":
+        if scelta_azione == "2":
             print()
             print(" ─────────")
             print("|Affittasi|")
@@ -179,6 +166,10 @@ while menu:
                     print("────────────────────────────────────────────────")
 
                     #proprietario terreno vicolo corto
+                    print()
+                    print(" ────────────")
+                    print("|Proprietario|")
+                    print(" ────────────")
                     print("a chi devo aggiungere soldi?")
                     lista_proprietari_terreno_vicolo_corto_cigno = ["1-cigno", "2-palla da rugby"]
                     for lista_proprietario_terreno_vicolo_corto_cigno in lista_proprietari_terreno_vicolo_stretto_cigno:
@@ -187,10 +178,29 @@ while menu:
 
                     #proprietario vicolo corto cigno
                     if scelta_proprietario_terreno_vicolo_corto_cigno == "1":
-                        print("sono stati aggiuunti: 4 euro a cigno")
+                        print()
+                        print(" ──────────")
+                        print("|Guadagnato|")
+                        print(" ──────────")
+                        print("sono stati aggiunti: 4 euro a cigno")
                         soldi_aggiunti_a_cigno = soldi_totali_cigno + affittoserie_vicolocorto
                         soldi_totali_cigno = soldi_aggiunti_a_cigno
+                        print("Ecco tutti i soldi che hai:")
                         print(soldi_totali_cigno)
+                        print("────────────────────────────────────────────────")
+
+                    #proprietario vicolo corto palla da rugby                    
+                    if scelta_proprietario_terreno_vicolo_corto_cigno == "2":
+                        print()
+                        print(" ──────────")
+                        print("|Guadagnato|")
+                        print(" ──────────")
+                        print("Sono stati aggiunti: 4 euro a palla da rugby")
+                        soldi_aggiunti_a_palla_da_rugby = soldi_totali_palla_da_rugby + affittoserie_vicolocorto
+                        soldi_totali_palla_da_rugby = soldi_aggiunti_a_palla_da_rugby
+                        print("Ecco tutti i soldi che hai:")
+                        print(soldi_totali_palla_da_rugby)
+                        print("────────────────────────────────────────────────")
 
                 #affitto in serie di vicolo stretto
                 if scelta_affitto_in_serie == "2":
@@ -204,6 +214,10 @@ while menu:
                     print(soldi_totali_cigno)
 
                     #proprietario terreno vicolo stretto
+                    print()
+                    print(" ────────────")
+                    print("|Proprietario|")
+                    print(" ────────────")
                     print("a chi devo aggiungere soldi?")
                     lista_proprietari_terreno_vicolo_stretto_cigno = ["1-cigno", "2-palla da rugby"]
                     for lista_proprietario_terreno_vicolo_stretto_cigno in lista_proprietari_terreno_vicolo_stretto_cigno:
@@ -212,34 +226,33 @@ while menu:
 
                     #proprietario vicolo stretto cigno
                     if scelta_proprietario_terreno_vicolo_stretto_cigno == "1":
+                        print()
+                        print(" ──────────")
+                        print("|Guadagnato|")
+                        print(" ──────────")
                         print("sono stati aggiuunti: 8 euro a cigno"  )
                         soldi_aggiunti_a_cigno = soldi_totali_cigno + affittoserie_vicolostretto
                         soldi_totali_cigno = soldi_aggiunti_a_cigno
                         print(soldi_totali_cigno)
-#palla da rugby
-    if sceltainput == "2":
-        #azoni
-        azioni = ["1-immobili","2-soldi", ]
-        for azione in azioni:
-            print(azione)
-        scelta_azione = input()
-        #immobili
-        if scelta_azione == "1":
-            #lista immobili
-            lista_immobili = ["1-vicolo corto"]
-            for lista_immobile in lista_immobili:
-                print(lista_immobile)
-            nome_immobile = input()
-            #vicolo corto
-            if nome_immobile == "1":
-                #lista azioni vicolo corto
-                azioni_vicolo_corto = ["1-comprare"]
-                for azione_vicolo_corto in azioni_vicolo_corto:
-                    print(azione_vicolo_corto)
-                scelta_azione_vicolo_corto = input()
-                #comprare vicolo croto
-                if scelta_azione_vicolo_corto == "1":
-                    print("hai comprato vicolo corto, ti sono stati tolti 60 euro")
-                    soldi_palla_da_rugby = soldi_totali_palla_da_rugby - 60
-                    soldi_totali_palla_da_rugby = soldi_palla_da_rugby
-                    print(soldi_totali_palla_da_rugby)
+                        print("────────────────────────────────────────────────")
+
+                    #proprietario vicolo stretto palla da rugby
+                    if scelta_proprietario_terreno_vicolo_corto_cigno == "2":
+                        print()
+                        print(" ──────────")
+                        print("|Guadagnato|")
+                        print(" ──────────")
+                        print("Sono stati aggiunti: 4 euro a palla da rugby")
+                        soldi_aggiunti_a_palla_da_rugby = soldi_totali_palla_da_rugby + affittoserie_vicolocorto
+                        soldi_totali_palla_da_rugby = soldi_aggiunti_a_palla_da_rugby
+                        print("Ecco tutti i soldi che hai:")
+                        print(soldi_totali_palla_da_rugby)
+                        print("────────────────────────────────────────────────")
+        #totale soldi di cigno
+        if scelta_azione == "3":
+            print()
+            print(" ────────────────────")
+            print("|Ecco i soldi totali|")
+            print(" ────────────────────")
+            print(soldi_totali_cigno)
+            print("────────────────────────────────────────────────")
