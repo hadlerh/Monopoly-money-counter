@@ -1,4 +1,4 @@
-# Monopoly-money-counter 
+# Monopoly Money Counter 
 English: 
 Hello, this is a program created by me with the funcions accounting and management the money in a monopoly game, practically the money in paper that they give you in the box are not necessary.
 there are six player: 1-Swan, 2-rugby ball, 3-owl, 4-Teddy Bear, 5-Baby elephant, 6-Milk carton.
